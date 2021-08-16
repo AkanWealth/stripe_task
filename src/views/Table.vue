@@ -53,6 +53,11 @@
           <td colspan="4"></td>
         </tr>
       </template>
+      <template v-slot:item.success="{ item }">
+        <v-chip :color="getColor(item.success)" dark>
+          {{ item.success }}
+        </v-chip>
+      </template>
     </v-data-table>
   </div>
 </template>
@@ -70,7 +75,7 @@ export default {
         customer: "hefovo87@ereyemind...",
         date: "7 Jul, 14:04",
         protein: 4.0,
-        iron: "1%",
+        menu: "...",
       },
       {
         amount: "US$152.22",
@@ -79,7 +84,7 @@ export default {
         customer: "hello@gmail.com",
         date: "7 Jul, 14:04",
         protein: 4.3,
-        iron: "1%",
+        menu: "...",
       },
       {
         amount: "US$322.23",
@@ -88,7 +93,7 @@ export default {
         customer: "hello@gmail.com",
         date: "7 Jul, 14:04",
         protein: 6.0,
-        iron: "7%",
+        menu: "...",
       },
       {
         amount: "US$234.22",
@@ -97,7 +102,7 @@ export default {
         customer: "hefovo87@ereyemind...",
         date: "7 Jul, 14:04",
         protein: 4.3,
-        iron: "8%",
+        menu: "...",
       },
       {
         amount: "US$352.22",
@@ -106,7 +111,7 @@ export default {
         customer: "hefovo87@ereyemind...",
         date: "7 Jul, 14:04",
         protein: 3.9,
-        iron: "16%",
+        menu: "...",
       },
       {
         amount: "US$112.22",
@@ -115,7 +120,7 @@ export default {
         customer: "hefovo87@ereyemind...",
         date: "7 Jul, 14:04",
         protein: 0.0,
-        iron: "0%",
+        menu: "...",
       },
       {
         amount: "US$352.24",
@@ -124,7 +129,7 @@ export default {
         customer: "hefovo87@ereyemind...",
         date: "7 Jul, 14:04",
         protein: 0,
-        iron: "2%",
+        menu: "...",
       },
       {
         amount: "US$332.24",
@@ -133,7 +138,7 @@ export default {
         customer: "info@gmail.com",
         date: "7 Jul, 14:04",
         protein: 6.5,
-        iron: "45%",
+        menu: "...",
       },
       {
         amount: "US$322.22",
@@ -142,7 +147,7 @@ export default {
         customer: "info@gmail.com",
         date: "7 Jul, 14:04",
         protein: 4.9,
-        iron: "22%",
+        menu: "...",
       },
       {
         amount: "US$434.22",
@@ -151,7 +156,6 @@ export default {
         customer: "hefovo87@ereyemind...",
         date: "7 Jul, 14:04",
         menu: "...",
-        iron: "6%",
       },
     ],
   }),
@@ -177,10 +181,9 @@ export default {
     },
   },
   methods: {
+    // A green background color if the transaction was successful
     getColor(success) {
-      if (success !== success) return "red";
-      else if (success === success) return "orange";
-      else return "green";
+      if (success !== null) return "green";
     },
   },
 };

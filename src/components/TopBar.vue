@@ -5,6 +5,7 @@
       style="margin-top: 0.5rem"
     />
     <v-toolbar-title>
+      <!-- search section -->
       <v-form>
         <v-text-field
           label="Search..."
@@ -16,6 +17,7 @@
       </v-form>
     </v-toolbar-title>
     <v-spacer></v-spacer>
+    <!-- notification section -->
     <v-toolbar-items class="shrink mt-1 hidden-sm-and-down">
       <v-col>
         <v-icon class="mr-5">mdi-bell</v-icon>
